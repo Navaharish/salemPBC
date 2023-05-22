@@ -1,0 +1,77 @@
+//bg-image
+@mixin bg-image {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  // background: url(/images/jerusalem.jpg) center ,no-repeat;
+  background-size: cover;
+  z-index: 1;
+  overflow-x: hidden;
+
+}
+
+@mixin grandiant($color: rgba(5, 0, 136, 0.5)) {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, black, $color);
+  opacity: 0.57;
+  z-index: -1;
+}
+
+
+
+//button
+
+@mixin btn {
+  opacity: 0;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin: 50px 10px;
+  background: transparent;
+  border: 2px solid yellow;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 16px;
+
+}
+
+@mixin btn-span {
+  background-color: yellow;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+//outline button
+
+@mixin btn-outline {
+  border: 5px solid yellow;
+  padding: 10px 35px 10px 30px;
+  line-height: 1;
+  border-radius: 20px;
+  transition: 1.5s;
+  text-decoration: none;
+  color: black;
+}
+
+@mixin btn-outline-hover {
+  background: yellow;
+  color: white;
+}

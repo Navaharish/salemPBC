@@ -1,0 +1,232 @@
+@use"../../ABSTRACT/mixin";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+
+body,
+html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("/images/jesus-rise.jpg");
+
+
+  /* Add the blur effect */
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 35%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+//my css
+
+$cap-bg: rgba(0, 0, 0, 0.236);
+
+.bg-hero {
+
+  @include mixin.bg-image;
+  overflow-y: hidden;
+}
+
+.hero-content {
+  display: flex;
+  margin: 0rem 8rem;
+
+  &--img {
+    margin-top: 7%;
+  }
+}
+
+
+
+.caption {
+
+  font-size: 20px;
+  padding-top: 2%;
+  width: 100%;
+  z-index: 2;
+  margin-top: 15%;
+  margin-left: 2%;
+
+  &--name {
+    font-weight: 900;
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    opacity: 0;
+    text-align: center;
+    font-weight: 900;
+  }
+
+
+  &--logo {
+    width: 20rem;
+    height: 15rem;
+    opacity: 0;
+    margin-bottom: 200px;
+  }
+
+  &--slogan {
+
+    font-weight: 400;
+    font-size: 40px;
+    opacity: 0;
+  }
+
+  &--btn {
+
+    @include mixin.btn
+  }
+
+  &--btn__span {
+    @include mixin.btn-span
+  }
+
+  &--btn:hover span {
+    width: 100%;
+  }
+
+  &--btn:hover {
+    border: none;
+    color: black;
+    font-weight: bolder;
+  }
+
+  &--link {
+    opacity: 0;
+
+  }
+
+}
+
+
+
+
+.slide-left {
+  animation: slideleft 1s linear forwards;
+}
+
+@keyframes slideleft {
+  0% {
+    transform: translate(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+
+.caption--logo.slide-left {
+  animation-delay: 1s;
+}
+
+.caption--name.slide-left {
+  animation-delay: 2s;
+}
+
+.caption--slogan.slide-left {
+  animation-delay: 3s;
+}
+
+.caption--link .slide-left {
+  animation-delay: 4s;
+}
+
+@media only screen and (max-width:1200px) {
+  .bg-hero {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width:720px) {
+
+  /*background for sm*/
+  .bg-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+  }
+
+
+
+  /*caption for small device*/
+
+  .caption {
+
+    font-size: 15px;
+    text-align: center;
+
+    width: 100%;
+
+    &--logo {
+      width: 180px;
+      height: 150px;
+
+    }
+
+
+    &--name {
+      font-weight: 600;
+      font-size: 40px;
+      letter-spacing: 0px;
+      margin-top: 5px;
+      padding-bottom: 5px;
+      opacity: 0;
+
+    }
+
+    &--slogan {
+      font-weight: 400;
+      font-size: 30px;
+      margin-bottom: 40px;
+
+    }
+
+    &--btn {
+
+      width: 150px;
+      margin-left: 3%;
+
+    }
+
+  }
+
+
+}

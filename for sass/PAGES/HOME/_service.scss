@@ -1,0 +1,143 @@
+
+@use"../../ABSTRACT/mixin";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+$cursive-font: 'Roboto', sans-serif;
+
+.service {
+ background: url(../images/pink-blue-cloud.jpg) center ,no-repeat;
+
+ @include mixin.bg-image;
+ height:100%;
+ text-align: center;
+
+
+ h3{
+    padding-top:-30px;
+    font-size: 50px;
+    font-weight: 300;
+ }
+ &-footer{
+   color: red;
+   margin-top:30px;
+   margin-bottom: 30px;
+ }
+  }
+
+
+  .service-content{
+    margin-top: 80px;
+  
+  }
+
+  .service-items{
+    display: inline-flex;
+
+    .service-items-1{
+       display: flex;
+    }
+    .service-items-1 img{
+        margin-bottom: 25px;
+    }
+
+    .service-items-2{
+        display: flex;
+        margin-bottom: 30px;
+     }
+  }
+
+
+  .service-items li{
+    list-style-type: none;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    }
+
+    .service-items li span,p{
+       font-size: 18px;
+       font-weight: bolder;
+       font-style: italic;
+       font-family:$cursive-font;
+    
+    }
+
+    .videoWrapper {
+  position: relative;
+  padding: 15% 10.12%; /* 16:9 */
+  height: 0;
+  margin-left: 25%;
+  margin-top: -40px;
+
+  
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 95%;
+}
+
+/*mobile view for service page*/
+
+@media only screen and (max-width:1280px){
+
+*{
+  overflow-x: hidden;
+}
+  .service{
+         display: flex;
+         align-items: center;
+      h3{
+         font-size: 40px;
+         overflow-y: hidden;
+    
+      }    
+       }
+
+       .service-items li{
+        margin: 20px;
+        }
+    
+        .service-items li span,p{
+           font-size: 15px;
+        
+        }
+    
+/*services providing*/
+     
+        .service-items{
+          display: block;
+          margin-right:5%;
+        }     
+          .service-items-1{
+             display: flex;
+             justify-content: center;
+             margin-bottom: -20px;
+          }
+      
+          .service-items-2{
+              display: flex;
+             justify-content: center;
+           }
+     
+           .service-content{
+            margin-top: 50px;
+            text-align: center;
+          
+          }
+
+          .videoWrapper{
+                padding: 25% 10.50%; /* 16:9 */
+               scroll-behavior: auto;
+               margin-left: 15%;
+          }
+
+          .videoWrapper iframe{
+            width: 90%;
+           height: 100%;
+  
+          }
+  }

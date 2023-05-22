@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../images/favicon-32x32.png" type="image/x-icon">
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!--External CSS-->
+    <link rel="stylesheet" href="../CSS/register.css">
+
+
+
+    <!--bs CSS-->
+    <link rel="stylesheet" href="../asserts/css/bootstrap.min.css">
+
+    <!--bs js-->
+    <script src="../asserts/js/bootstrap.min.js"></script>
+
+
+
+    <!--External js-->
+    <script src="../JS/register.js"></script>
+
+    <title>REGISTER PAGE</title>
+</head>
+
+<body>
+
+    <!-- ========== Start NAVBAR ========== -->
+
+    <header class="header">
+        <div class="header--title">
+            <img src="../images/logo-removebg-preview (1).png" alt="logo-image" class="logo__img">
+            <span class="logo__name">Salem Primitive Baptist Church</span>
+
+        </div>
+
+        <div>
+            <img src="../images/toggle btn.png" id="toggleBtn" onclick="togglemenu()" alt="toggleBtn">
+            <ul id="navList" class="header--menu">
+
+                <li><a href="./index.html" class=" header--menu-item">HOME</a></li>
+                <li><a href="./our-service.html" class="header--menu-item">OUR SERVICES</a></li>
+                <li><a href="./event.html" class="header--menu-item">EVENTS</a></li>
+                <li><a href="./media.html" class="header--menu-item">MEDIA</a></li>
+                <li><a class="header--menu__btn active" href="#">REGISTER</a></li>
+
+
+            </ul>
+
+        </div>
+
+    </header>
+
+    <!-- ========== End NAVBAR ========== -->
+
+
+
+    <!-- ========== contact us start ========== -->
+    <div>
+        <hr>
+        <div class="contact-head"><i class="fa-solid fa-phone me-2" id="contact-us"></i> Contact us </div>
+        <hr>
+        <br>
+        <!--Map-->
+        <div class="container my-3 ">
+            <div class="row">
+                <div class="col-md-8">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000676.3034985233!2d77.01768832177731!3d11.65389476144599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1647504368073!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                </div>
+
+                <!--Form-->
+                <div class="col-md-4 ">
+                    <form class="validation" novalidate>
+
+                        <div class="card">
+                            <div class="card-header text-center p-3">
+                                Regester now
+                            </div>
+                            <div class="card-body">
+
+                                <div class="form-group my-3">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" placeholder="Enter your name" class="form-control"
+                                        required>
+                                </div>
+
+                                <div class="form-group my-3">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" placeholder="Enter your email" class="form-control"
+                                        required>
+                                </div>
+
+
+                                <div class="form-group my-3">
+                                    <label for="password">Passcode:</label>
+                                    <input type="password" id="password" placeholder="Enter your password"
+                                        class="form-control" required>
+                                </div>
+
+                                <span class="form-text">Add passcode unique with symbols and numbers</span>
+
+
+                                <!--date of birth-->
+                                <div class="form-group my-3">
+                                    <label for="dob">Date Of Birth:</label>
+                                    <input type="date" id="dob" class="form-control" required>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="register-btn " type="submit">Click To Regester</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Validing Form By JS-->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+
+    <!-- =========contact us end ========== -->
+
+    <!-- footer description-->
+    <!-- ========== Start copyright comment  ========== -->
+
+    <footer>
+
+        <hr>
+
+        <div class="copyright text-center ">
+            <img src="../images/logo-removebg-preview (1).png" alt="logo" class="logo__img copyright-img">
+            <div class="copyright-cont">
+                &copy; Copyright 2023-Salem Primitive Baptish Church.All right reseved.
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- ========== End copyright comment  ========== -->
+
+
+</body>
+
+</html>
